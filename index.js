@@ -101,3 +101,13 @@ app.get("/abhi", async (req, res) => {
     }
 });
 
+// Route to get all users
+app.get("/users", async (req, res) => {
+    try {
+        const users = await User.find(); // Retrieve all users
+        res.status(200).json(users); // Send the users as JSON
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Error retrieving user data" });
+    }
+});
