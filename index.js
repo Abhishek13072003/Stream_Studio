@@ -91,7 +91,7 @@ app.post("/creator-registration", async (req, res) => {
 });
 
 // Route to get all creator registration data
-app.get("/creator-registration", async (req, res) => {
+app.get("/abhi", async (req, res) => {
     try {
         const creators = await Creator.find(); // Retrieve all creator registrations
         res.status(200).json(creators); // Send the creator registrations as JSON
