@@ -89,3 +89,15 @@ app.post("/creator-registration", async (req, res) => {
         res.status(500).json({ error: "Error submitting creator registration" });
     }
 });
+
+// Route to get all creator registration data
+app.get("/creator-registration", async (req, res) => {
+    try {
+        const creators = await Creator.find(); // Retrieve all creator registrations
+        res.status(200).json(creators); // Send the creator registrations as JSON
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Error retrieving creator registration data" });
+    }
+});
+
