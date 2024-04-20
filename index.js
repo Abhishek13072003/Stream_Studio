@@ -42,6 +42,10 @@ mongoose.connect(URL).then(() => {
     })
 }).catch(error => console.log(error));
 
+app.get('/ping', (req, res) => {
+    res.send('PONG')
+});
+
 // Route for user signup
 app.post("/signup", async (req, res) => {
     try {
