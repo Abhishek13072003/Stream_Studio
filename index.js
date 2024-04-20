@@ -42,7 +42,7 @@ mongoose.connect(URL).then(() => {
     })
 }).catch(error => console.log(error));
 
-app.get('/ping', (req, res) => {
+app.get('/', (req, res) => {
     res.send('PONG')
 });
 
